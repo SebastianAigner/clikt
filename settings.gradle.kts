@@ -9,12 +9,16 @@ include("samples:plugins")
 include("samples:json")
 
 
+@Suppress("UnstableApiUsage")
 dependencyResolutionManagement {
     versionCatalogs {
         create("libs") {
             version("kotlin", "1.6.20")
 
             plugin("dokka", "org.jetbrains.dokka").version("1.6.10")
+
+            // TODO: switch to published mordant
+            library("mordant", "com.github.ajalt.mordant:mordant:2.0.0-local")
 
             // used in tests
             library("dokka-base", "org.jetbrains.dokka:dokka-base:1.6.10")
@@ -25,7 +29,6 @@ dependencyResolutionManagement {
             // used in samples
             library("kodein", "org.kodein.di:kodein-di-generic-jvm:5.2.0")
             library("kotlinx-serialization", "org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2")
-            library("mordant", "com.github.ajalt:mordant:1.2.1")
         }
     }
 }
