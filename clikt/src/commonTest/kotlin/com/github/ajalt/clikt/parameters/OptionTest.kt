@@ -8,7 +8,6 @@ import com.github.ajalt.clikt.parameters.types.int
 import com.github.ajalt.clikt.testing.TestCommand
 import com.github.ajalt.clikt.testing.formattedMessage
 import com.github.ajalt.clikt.testing.parse
-import com.github.ajalt.clikt.testing.skipDueToKT33294
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.data.blocking.forAll
 import io.kotest.data.row
@@ -557,8 +556,6 @@ class OptionTest {
     @Test
     @JsName("option_validator_basic")
     fun `option validator basic`() {
-        if (skipDueToKT33294) return
-
         var called = false
 
         class C : TestCommand() {
@@ -587,8 +584,6 @@ class OptionTest {
         row("--y=foo --z=bar --w=foo", "Invalid value for \"--z\": fail"),
         row("--y=foo --w=bar", "Invalid value for \"--w\": fail bar")
     ) { argv, message ->
-        if (skipDueToKT33294) return@forAll
-
         class C : TestCommand() {
             val x by option().check { it == "foo" }
             val y by option().required().check { it == "foo" }
@@ -603,8 +598,6 @@ class OptionTest {
     @Test
     @JsName("option_validator_required")
     fun `option validator required`() {
-        if (skipDueToKT33294) return
-
         var called = false
 
         class C : TestCommand() {
