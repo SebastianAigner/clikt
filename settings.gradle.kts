@@ -16,14 +16,14 @@ dependencyResolutionManagement {
     }
     versionCatalogs {
         create("libs") {
-            version("kotlin", "1.7.0")
+            version("kotlin", "1.7.20-Beta")
 
-            plugin("dokka", "org.jetbrains.dokka").version("1.7.0")
+            plugin("dokka", "org.jetbrains.dokka").version("1.7.10")
 
             library("mordant", "com.github.ajalt.mordant:mordant:2.0.0-beta7")
 
             // used in tests
-            library("dokka-base", "org.jetbrains.dokka:dokka-base:1.7.0")
+            library("dokka-base", "org.jetbrains.dokka:dokka-base:1.7.10")
             library("kotest", "io.kotest:kotest-assertions-core:5.3.1")
             library("systemrules", "com.github.stefanbirkner:system-rules:1.19.0")
             library("jimfs", "com.google.jimfs:jimfs:1.1")
