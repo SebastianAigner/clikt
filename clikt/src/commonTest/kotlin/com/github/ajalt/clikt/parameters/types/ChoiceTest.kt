@@ -162,7 +162,7 @@ class OptionChoiceTest {
             y shouldBe 2
         }
 
-        shouldThrow<BadParameterValue> { C().parse("baz qux") }
+        shouldThrow<BadParameterValue> { C().parse("baz foo") }
             .formattedMessage shouldBe "Invalid value for \"X\": invalid choice: baz. (choose from foo, bar)"
     }
 }
